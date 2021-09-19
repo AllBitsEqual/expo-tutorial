@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react-native",
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "plugins": [
+      {
+        "name": "typescript-styled-plugin",
+        "lint": {
+          "validProperties": [
+            "aspect-ratio",
+            "elevation",
+            "margin-vertical",
+            "margin-horizontal",
+            "padding-horizontal",
+            "padding-vertical",
+            "resize-mode",
+            "shadow-color",
+            "shadow-opacity",
+            "shadow-offset",
+            "shadow-radius",
+            "text-align-vertical",
+            "tint-color"
+          ]
+        }
+      }
+    ],
+    "moduleResolution": "node",
+    "noEmit": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+  },
+  "extends": "expo/tsconfig.base"
+}
