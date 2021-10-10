@@ -12,6 +12,7 @@ import SettingsScreen from '../screens/SettingsScreen'
 import HomeScreen from '../screens/HomeScreen'
 import HomeScreenB from '../screens/HomeScreenB'
 import HomeScreenC from '../screens/HomeScreenC'
+import StageScreen from '../screens/StageScreen'
 
 const Home = () => (
     <HomeTabs.Navigator
@@ -59,6 +60,7 @@ const MainNavigation = (): React.ReactElement => {
                     <>
                         <MainStack.Screen name={MainRoutes.Home} component={Home} />
                         <MainStack.Screen name={MainRoutes.Settings} component={SettingsScreen} />
+                        <MainStack.Screen name={MainRoutes.Stage} component={StageScreen} />
                     </>
                 ) : (
                     <>

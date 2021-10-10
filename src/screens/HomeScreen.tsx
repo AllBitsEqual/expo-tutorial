@@ -14,6 +14,30 @@ const HomeScreen = ({ navigation }: HomeScreenProps): React.ReactElement => {
         <DefaultPage>
             <Text>HOME</Text>
 
+            <TouchableOpacity
+                onPress={() => navigation.navigate(MainRoutes.Stage, { act: 1, level: 1 })}
+            >
+                <Text>&lt; Stage️ 1-1 &gt;</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+                onPress={() => navigation.navigate(MainRoutes.Stage, { act: 1, level: 2 })}
+            >
+                <Text>&lt; Stage️ 1-2 &gt;</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+                onPress={() => navigation.navigate(MainRoutes.Stage, { act: 1, level: 3 })}
+            >
+                <Text>&lt; Stage️ 1-3 &gt;</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+                onPress={() => navigation.navigate(MainRoutes.Stage, { act: 1, level: 1 })}
+            >
+                <Text>&lt; Continue Current Stage️ &gt;</Text>
+            </TouchableOpacity>
+
             <StyledSettingsButton>
                 <TouchableOpacity onPress={() => navigation.navigate(MainRoutes.Settings)}>
                     <Text>⚙️</Text>

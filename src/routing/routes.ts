@@ -6,6 +6,7 @@ export enum MainRoutes {
     AppLoading = 'AppLoading', // Load User Data for signed in users
     Home = 'Home', // The first "real" page of the app, now a set of tabs
     Settings = 'Settings', // Default Settings Page
+    Stage = 'Stage', // Dynamic Stage Screen
 }
 
 export enum HomeRoutes {
@@ -19,6 +20,7 @@ export type MainStackParamList = {
     [MainRoutes.AppLoading]: undefined
     [MainRoutes.Home]: undefined
     [MainRoutes.Settings]: undefined
+    [MainRoutes.Stage]: { act: number; level: number }
 }
 
 export type HomeTabsParamList = {
