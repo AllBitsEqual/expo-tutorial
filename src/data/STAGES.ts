@@ -15,7 +15,7 @@ const STAGES: StageData[][] = [
         { id: '1-3', pre: '1-2', name: 'Basics 02', type: 'BATTLE' },
     ],
     [
-        { id: '2-1', pre: 'init', name: 'A new Beginning', type: 'BATTLE' },
+        { id: '2-1', pre: '1-3', name: 'A new Beginning', type: 'BATTLE' },
         { id: '2-2', pre: '2-1', name: 'Forging ahead', type: 'STORY' },
     ],
 ]

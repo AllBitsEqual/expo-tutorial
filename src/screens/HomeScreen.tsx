@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Text } from 'react-native'
+import { Text, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import styled from 'styled-components/native'
 import { MainNavigationProp } from '../routing/types'
@@ -41,39 +41,43 @@ const HomeScreen = ({ navigation }: HomeScreenProps): React.ReactElement => {
             <Text>HOME</Text>
             <Text>- - - -</Text>
 
-            {stages.map(act =>
-                act.map(stage => {
-                    const [currentAct, currentLevel] = stage.id.split('-')
-                    return (
-                        <TouchableOpacity
-                            key={stage.id}
-                            onPress={
-                                stage.completion < 0
-                                    ? undefined
-                                    : () =>
-                                          navigation.navigate(MainRoutes.Stage, {
-                                              act: currentAct,
-                                              level: currentLevel,
-                                          })
-                            }
-                        >
-                            <Text style={{ color: stage.completion === -1 ? 'green' : 'black' }}>
-                                &gt; Stage️
-                                {stage.id}
-                                {stage.completion < 0 ? ' (locked) ' : ` (${stage.completion}%) `}
-                                &lt;
-                            </Text>
-                        </TouchableOpacity>
-                    )
-                }),
-            )}
+            {stages.map((act, actIndex) => (
+                // eslint-disable-next-line react/no-array-index-key
+                <View key={`act_${actIndex}`}>
+                    <Text>___________</Text>
+                    <Text>{`| Act ${actIndex + 1}`}</Text>
+                    <Text>-----------</Text>
+                    {act.map(stage => {
+                        const [currentAct, currentLevel] = stage.id.split('-')
+                        return (
+                            <TouchableOpacity
+                                key={stage.id}
+                                onPress={
+                                    stage.completion < 0
+                                        ? undefined
+                                        : () =>
+                                              navigation.navigate(MainRoutes.Stage, {
+                                                  act: currentAct,
+                                                  level: currentLevel,
+                                              })
+                                }
+                            >
+                                <Text
+                                    style={{ color: stage.completion === -1 ? 'green' : 'black' }}
+                                >
+                                    &gt; Stage️
+                                    {stage.id}
+                                    {stage.completion < 0
+                                        ? ' (locked) '
+                                        : ` (${stage.completion}%) `}
+                                    &lt;
+                                </Text>
+                            </TouchableOpacity>
+                        )
+                    })}
+                </View>
+            ))}
             <Text>- - - -</Text>
-
-            <TouchableOpacity
-                onPress={() => navigation.navigate(MainRoutes.Stage, { act: '1', level: '1' })}
-            >
-                <Text>&gt; Continue Current Stage️ &lt;</Text>
-            </TouchableOpacity>
 
             <StyledSettingsButton>
                 <TouchableOpacity onPress={() => navigation.navigate(MainRoutes.Settings)}>
