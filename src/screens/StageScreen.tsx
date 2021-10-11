@@ -15,7 +15,7 @@ const StageScreen = ({ navigation, route }: StageScreenProps): React.ReactElemen
     const {
         params: { act, level },
     } = route
-    const stageId = `${act}-${act}`
+    const stageId = `${act}-${level}`
     const progress = stageProgress.find(stage => stage.id === stageId)?.completion || 0
     return (
         <DefaultPage>
