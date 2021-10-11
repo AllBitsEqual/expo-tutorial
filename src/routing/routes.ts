@@ -20,7 +20,7 @@ export type MainStackParamList = {
     [MainRoutes.AppLoading]: undefined
     [MainRoutes.Home]: undefined
     [MainRoutes.Settings]: undefined
-    [MainRoutes.Stage]: { act: number; level: number }
+    [MainRoutes.Stage]: { act: string; level: string }
 }
 
 export type HomeTabsParamList = {
