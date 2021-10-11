@@ -1,6 +1,8 @@
 import { createAction, createReducer, Middleware } from '@reduxjs/toolkit'
 import { RootState } from '../index'
 import STAGES from '../../data/STAGES'
+import { MainRoutes } from '../../routing/routes'
+import { navigate } from '../../routing/rootNavigatoin'
 
 export type Stage = {
     id: string
@@ -86,6 +88,7 @@ export const progressMiddleware: Middleware =
             const { progress } = getState()
             const newStages = getNewStages(progress.stages, id, completion)
             dispatch(updateStages(newStages))
+            setTimeout(() => navigate(MainRoutes.Home), 1000)
         }
     }
 

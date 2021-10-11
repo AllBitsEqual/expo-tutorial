@@ -33,7 +33,7 @@ const HomeScreen = ({ navigation }: HomeScreenProps): React.ReactElement => {
     useEffect(() => {
         setTimeout(() => {
             animated.forEach(stage => dispatch(setCompletion(stage.id, 0)))
-        }, 3000)
+        }, 1500)
     }, [animated, dispatch])
 
     return (

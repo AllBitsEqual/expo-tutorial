@@ -1,8 +1,8 @@
-import React, { useRef } from 'react'
-import { NavigationContainer, NavigationContainerRef } from '@react-navigation/native'
+import React from 'react'
+import { NavigationContainer } from '@react-navigation/native'
 import { useReduxDevToolsExtension } from '@react-navigation/devtools'
 import { Text } from 'react-native'
-import { HomeRoutes, HomeTabs, MainRoutes, MainStack, MainStackParamList } from './routes'
+import { HomeRoutes, HomeTabs, MainRoutes, MainStack } from './routes'
 import { useReduxSelector } from '../redux'
 import { selectIsRunning } from '../redux/ducks/appState'
 
@@ -13,6 +13,7 @@ import HomeScreen from '../screens/HomeScreen'
 import HomeScreenB from '../screens/HomeScreenB'
 import HomeScreenC from '../screens/HomeScreenC'
 import StageScreen from '../screens/StageScreen'
+import { navigationRef } from './rootNavigatoin'
 
 const Home = () => (
     <HomeTabs.Navigator
@@ -44,8 +45,6 @@ const Home = () => (
 
 const MainNavigation = (): React.ReactElement => {
     const isAppRunning = useReduxSelector(selectIsRunning)
-
-    const navigationRef: React.RefObject<NavigationContainerRef<MainStackParamList>> = useRef(null)
 
     useReduxDevToolsExtension(navigationRef)
 
