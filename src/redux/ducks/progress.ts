@@ -2,7 +2,7 @@ import { createAction, createReducer, Middleware } from '@reduxjs/toolkit'
 import { RootState } from '../index'
 import STAGES from '../../data/STAGES'
 import { MainRoutes } from '../../routing/routes'
-import { navigate } from '../../routing/rootNavigatoin'
+import { navigate } from '../../routing/rootNavigation'
 
 export type Stage = {
     id: string

@@ -13,7 +13,7 @@ import HomeScreen from '../screens/HomeScreen'
 import HomeScreenB from '../screens/HomeScreenB'
 import HomeScreenC from '../screens/HomeScreenC'
 import StageScreen from '../screens/StageScreen'
-import { navigationRef } from './rootNavigatoin'
+import { navigationRef } from './rootNavigation'
 
 const Home = () => (
     <HomeTabs.Navigator
